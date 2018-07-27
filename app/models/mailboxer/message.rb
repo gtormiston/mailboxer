@@ -13,7 +13,7 @@ class Mailboxer::Message < Mailboxer::Notification
 
   # mount_uploader :attachment, Mailboxer::AttachmentUploader
   has_many :attachments
-  accepts_nested_attributes_for :attachments
+  # accepts_nested_attributes_for :attachments
 
   class << self
     #Sets the on deliver callback method.
@@ -48,4 +48,10 @@ class Mailboxer::Message < Mailboxer::Notification
     end
     sender_receipt
   end
+
+#   def upload_params
+#   params.require(:message)
+#         .permit(doc_upload: [])
+# end
+
 end
